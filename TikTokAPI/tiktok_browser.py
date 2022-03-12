@@ -8,7 +8,7 @@ class TikTokBrowser:
 
     def __init__(self, user_agent, chrompath):
         self.userAgent = user_agent
-        self.executablePath = chrompath,
+        self.executablePath = chrompath
         self.args = [
             "--no-sandbox",
             "--disable-setuid-sandbox",
@@ -61,7 +61,6 @@ class TikTokBrowser:
     async def async_fetch_auth_params(self, url, language):
         browser = await launch(self.options)
         page = await browser.newPage()
-
         await page.evaluateOnNewDocument("""() => {
             delete navigator.__proto__.webdriver;
         }""")

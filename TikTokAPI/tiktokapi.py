@@ -12,7 +12,7 @@ class VideoException(Exception):
 
 class TikTokAPI(object):
 
-    def __init__(self, cookie=None, language='en', browser_lang="en-US", timezone="Asia/Kolkata", region='IN', chromiumPath=''):
+    def __init__(self, cookie=None, language='en', browser_lang="en-US", timezone="Asia/Kolkata", region='IN', chromiumPath=None):
         self.base_url = "https://t.tiktok.com/api"
         self.user_agent = "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:79.0) Gecko/20100101 Firefox/79.0"
 
