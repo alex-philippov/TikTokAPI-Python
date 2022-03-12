@@ -6,8 +6,9 @@ from .utils import python_list2_web_list
 
 class TikTokBrowser:
 
-    def __init__(self, user_agent, chromPath):
+    def __init__(self, user_agent, chrompath):
         self.userAgent = user_agent
+        self.executablePath = chrompath,
         self.args = [
             "--no-sandbox",
             "--disable-setuid-sandbox",
