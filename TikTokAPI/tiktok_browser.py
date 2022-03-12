@@ -12,6 +12,10 @@ class TikTokBrowser:
             "--no-sandbox",
             "--disable-setuid-sandbox",
             "--disable-infobars",
+            "--single-process",
+            "--disable-dev-shm-usage",
+            "--disable-gpu",
+            "--no-zygote",
             "--window-position=0,0",
             "--ignore-certifcate-errors",
             "--ignore-certifcate-errors-spki-list",
@@ -19,7 +23,6 @@ class TikTokBrowser:
         ]
         self.options = {
             'args': self.args,
-            'evaluatedPath': chromPath,
             'headless': True,
             'ignoreHTTPSErrors': True,
             'userDataDir': "./tmp",
