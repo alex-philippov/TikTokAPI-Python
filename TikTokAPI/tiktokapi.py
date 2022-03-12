@@ -12,7 +12,7 @@ class VideoException(Exception):
 
 class TikTokAPI(object):
 
-    def __init__(self, cookie=None, language='en', browser_lang="en-US", timezone="Asia/Kolkata", region='IN'):
+    def __init__(self, cookie=None, language='en', browser_lang="en-US", timezone="Asia/Kolkata", region='IN', chromiumPath=''):
         self.base_url = "https://t.tiktok.com/api"
         self.user_agent = "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:79.0) Gecko/20100101 Firefox/79.0"
 
@@ -65,7 +65,7 @@ class TikTokAPI(object):
         }
         self.signature_key = "_signature"
         self.did_key = "did"
-        self.tiktok_browser = TikTokBrowser(self.user_agent)
+        self.tiktok_browser = TikTokBrowser(self.user_agent, chromiumPath)
 
     def send_get_request(self, url, params, extra_headers=None):
         url = build_get_url(url, params)

@@ -6,7 +6,7 @@ from .utils import python_list2_web_list
 
 class TikTokBrowser:
 
-    def __init__(self, user_agent):
+    def __init__(self, user_agent, chromPath):
         self.userAgent = user_agent
         self.args = [
             "--no-sandbox",
@@ -19,6 +19,7 @@ class TikTokBrowser:
         ]
         self.options = {
             'args': self.args,
+            'evaluatedPath': chromPath,
             'headless': True,
             'ignoreHTTPSErrors': True,
             'userDataDir': "./tmp",
