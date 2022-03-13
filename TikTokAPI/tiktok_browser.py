@@ -59,6 +59,7 @@ class TikTokBrowser:
         return asyncio.get_event_loop().run_until_complete(self.async_fetch_auth_params(url, language))
 
     async def async_fetch_auth_params(self, url, language):
+        self.options['executablePath'] = self.executablePath
         browser = await launch(self.options)
         page = await browser.newPage()
         await page.evaluateOnNewDocument("""() => {
